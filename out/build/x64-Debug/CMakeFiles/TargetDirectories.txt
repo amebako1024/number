@@ -1,0 +1,3 @@
+C:/Users/kjh10/source/repos/amebako1024/number/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/kjh10/source/repos/amebako1024/number/out/build/x64-Debug/CMakeFiles/number.dir
+C:/Users/kjh10/source/repos/amebako1024/number/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
