@@ -5,11 +5,16 @@
 #include<iostream>
 #include<tuple>
 #include<array>
+#include<map>
+#include<vector>
+#include<cmath>
+#include<ctime>
 
 using Int = int;
 using Int2d = std::array<Int, 2>;
 
 template <typename T>
+
 struct Answer {
     bool isOK;
     T answer;
@@ -26,15 +31,70 @@ Int euclid(Int a, Int b);
 
 Answer<std::array<Int, 2>> solveLinIntEq(Int a, Int b, Int c);
 
+bool isPrime(Int n);
+bool divisibleByN(Int M, Int N);
+bool divisibleBy3(Int M);
+
+void factorization(Int n);
 
 
 int main(void) {
-    Int a = 12453, b = 2347, c = 1;
-    Answer<Int2d> ans = solveLinIntEq(a, b, c);
-    if (ans.isOK) std::printf("%d, %d\n", ans.answer[0], ans.answer[1]);
+    
+    factorization(2*2*2*3*3*3*3*5*7*13);
 
     return 0;
 }
+
+// Classifying;
+
+bool isPrime(Int n) {
+    
+    Int posN = abs(n);
+    if (posN == 2)
+        return true;
+    else if (posN % 2 == 0) {
+        return false;
+    }
+    
+    Int limit = static_cast<Int>(std::sqrt(posN));
+    for (Int p = 3; p <= limit; p += 2) {
+        if (posN % p == 0)
+            return false;
+        
+    }
+    return true;
+}
+
+bool divisibleBy3(Int M)
+{   
+
+    return false;
+}
+
+void factorization(Int n)
+{
+
+    std::map<Int, Int> factors;
+
+    Int posN = abs(n);
+    Int prime = 2;
+
+    while (posN > 1) {
+        if (posN % prime == 0) {
+            factors[prime]++;
+            posN /= prime; 
+        }
+        else {
+            
+            while (!isPrime(++prime));
+        }
+    }
+    for (auto& factor : factors) {
+        std::cout << factor.first << '^' << factor.second << std::endl;
+    }
+}
+
+
 
 Int euclid(Int a, Int b)
 {
